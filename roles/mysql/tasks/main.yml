@@ -1,0 +1,10 @@
+---
+
+- name: Setup MySQL Database
+  include: setup.yml
+
+- name: Create EasyAppt Database instance in MySQL
+  include: create_db.yml
+
+- name: Restart Apache
+  service: name=apache2 state=restarted
